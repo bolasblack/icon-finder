@@ -31,7 +31,6 @@
     "q": "^2.0.0",
     "read-components": "^0.6.0",
     "rework": "^0.20.2",
-    "rework-calc": "^0.2.1",
     "rework-importer": "^0.3.1",
     "rework-shade": "^1.4.3",
     "rework-vars": "^2.0.3",

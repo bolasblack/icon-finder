@@ -1,4 +1,48 @@
 
-*
-  box-sizing: border-box
+:root
+  var-icon-width: 280px
+
+.navbar.navbar-suspense
+  margin: 0 10px
+  padding: 5px 0 0 0
+  width: calc(100% - 10px * 2)
+  background-color: rgba(255, 255, 255, .8)
+  border-radius: 0 0 5px 5px
+
+  .navbar-form
+    margin: 0 auto
+    padding: 5px 10px
+    background-color: #eaeaea
+    border-radius: 5px
+
+  input[type=search]
+    width: 100%
+    box-shadow: none
+
+    &:focus
+      box-shadow: none
+
+.app-list
+  margin: 55px 0 40px 0
+  text-align: center
+
+  .app
+    display: inline-block
+    padding: 0 10px
+    vertical-align: top
+
+  .app-link
+    display: block
+    color: inherit
+
+  .app-icon img
+    display: block
+    margin: 0 auto
+    width: var(icon-width)
+    height: var(icon-width)
+    border-radius: 45px
+
+  .app-name
+    width: var(icon-width)
+    text-align: center
 

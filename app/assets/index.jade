@@ -3,6 +3,7 @@ html
   head
     meta(charset="utf-8")
     title(data-ng-bind-template="{{pageTitle}}")
+    meta(name="viewport" content="width=320")
 
     link(rel="stylesheet" href="styles/vendor.css")
     link(rel="stylesheet" href="styles/app.css")
@@ -10,5 +11,9 @@ html
     script(src="scripts/app.js")
 
   body
-    div(data-ui-view)
+    nav.navbar.navbar-fixed-top.navbar-suspense(data-ng-controller="SearchCtrl")
+      .navbar-form
+        input.form-control(type="search" data-ng-model="searchTerm" data-ng-keyup="search()")
+
+    .main-container(data-ui-view)
 

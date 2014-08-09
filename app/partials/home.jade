@@ -1,3 +1,8 @@
 
-h1 It works!
+ul.list-unstyled.app-list
+  li.app(data-ng-repeat="app in apps")
+    a.app-link(target="_blank" data-ng-href="{{app.trackViewUrl}}")
+      p.app-icon
+        img(data-ng-src="{{app.artworkUrl600 || app.artworkUrl512}}")
+      p.app-name {{app.trackName}}
 

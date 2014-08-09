@@ -22,10 +22,11 @@ angular.module('app', [
   $urlRouterProvider.otherwise '/'
 
   $stateProvider
-    .state('home', {
-      url: '/'
+    .state('home',
+      url: '/:term?country&media&entity&attribute&lang&version&explicit&limit'
       templateUrl: 'partials/home.html'
-    })
+      controller: 'AppListCtrl'
+    )
 ])
 
 angular.element(document).ready ->

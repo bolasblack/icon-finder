@@ -3,7 +3,6 @@ through = require 'through2'
 cssWhitespaceCompiler = require 'css-whitespace'
 
 rework = require 'rework'
-rework_calc = require 'rework-calc'
 rework_vars = require 'rework-vars'
 rework_shade = require 'rework-shade'
 rework_import = require 'rework-importer'
@@ -34,7 +33,6 @@ module.exports = ->
         whitespace: true
       )
       .use rework_vars()
-      .use rework_calc
       .use rework_shade()
       .use rework.mixin mixins
       .use rework.extend()
