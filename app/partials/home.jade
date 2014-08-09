@@ -10,4 +10,6 @@ div(data-spin="apps.$promise")
       | 输入应用名称开始搜索吧
     li.message(data-ng-show="isResultEmpty()")
       | 没有找到任何应用 :(
+    li.message.fork-me(data-ng-show="isResultEmpty() || isLanding")
+      a(href="https://github.com/bolasblack/icon-finder" target="_blank") Fork me on GitHub
 
