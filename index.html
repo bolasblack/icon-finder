@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title data-ng-bind-template="{{pageTitle}}"></title>
+    <meta name="viewport" content="width=320">
+    <link rel="stylesheet" href="styles/vendor.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <nav data-ng-controller="SearchCtrl" class="navbar navbar-fixed-top navbar-suspense">
+      <div class="navbar-form">
+        <input type="search" data-ng-model="searchTerm" data-ng-keyup="search()" class="form-control">
+      </div>
+    </nav>
+    <div data-ui-view class="main-container"></div>
+  </body>
+</html>

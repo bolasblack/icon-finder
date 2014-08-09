@@ -1,0 +1,6 @@
+
+<ul class="list-unstyled app-list">
+  <li data-ng-repeat="app in apps" class="app"><a target="_blank" data-ng-href="{{app.trackViewUrl}}" class="app-link">
+      <p class="app-icon"><img data-ng-src="{{app.artworkUrl600 || app.artworkUrl512}}"/></p>
+      <p class="app-name">{{app.trackName}}</p></a></li>
+</ul>

@@ -1,0 +1,52 @@
+.navbar.navbar-suspense {
+  margin: 0 10px;
+  padding: 5px 0 0 0;
+  width: calc(100% - 10px * 2);
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 0 0 5px 5px;
+}
+
+.navbar.navbar-suspense .navbar-form {
+  margin: 0 auto;
+  padding: 5px 10px;
+  background-color: #eaeaea;
+  border-radius: 5px;
+}
+
+.navbar.navbar-suspense input[type=search]:focus {
+  box-shadow: none;
+}
+
+.navbar.navbar-suspense input[type=search] {
+  width: 100%;
+  box-shadow: none;
+}
+
+.app-list {
+  margin: 55px 0 40px 0;
+  text-align: center;
+}
+
+.app-list .app {
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: top;
+}
+
+.app-list .app-link {
+  display: block;
+  color: inherit;
+}
+
+.app-list .app-icon img {
+  display: block;
+  margin: 0 auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 45px;
+}
+
+.app-list .app-name {
+  width: 280px;
+  text-align: center;
+}
