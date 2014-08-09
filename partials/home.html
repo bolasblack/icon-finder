@@ -5,6 +5,7 @@
         <p class="app-icon"><img data-ng-src="{{app.artworkUrl600 || app.artworkUrl512}}"/></p>
         <p class="app-name">{{app.trackName}}</p></a></li>
     <li data-ng-show="isLanding" class="message">输入应用名称开始搜索吧</li>
-    <li data-ng-show="apps.$resolved &amp;&amp; !isLanding &amp;&amp; !apps.length" class="message">没有找到任何应用 :(</li>
+    <li data-ng-show="isResultEmpty()" class="message">没有找到任何应用 :(</li>
+    <li data-ng-show="isResultEmpty() || isLanding" class="message fork-me"><a href="https://github.com/bolasblack/icon-finder" target="_blank">Fork me on GitHub</a></li>
   </ul>
 </div>

@@ -11,9 +11,6 @@
         return $scope.searchTerm = term;
       });
       return $scope.search = function() {
-        if (!$scope.searchTerm) {
-          return;
-        }
         return $state.go('home', {
           term: $scope.searchTerm
         });
@@ -36,7 +33,11 @@
       if (params.term) {
         $scope.apps = App.query(params);
       }
-      return $scope.isLanding = !$stateParams.term;
+      $scope.isLanding = !$stateParams.term;
+      return $scope.isResultEmpty = function() {
+        var _ref, _ref1;
+        return ((_ref = $scope.apps) != null ? _ref.$resolved : void 0) && !((_ref1 = $scope.apps) != null ? _ref1.length : void 0) && !$scope.isLanding;
+      };
     }
   ]);
 
