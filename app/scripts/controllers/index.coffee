@@ -28,7 +28,11 @@ angular.module('app.controllers', [
         newObj[key] = value if value?
       newObj
 
-    $scope.apps = App.query removeEmptyKey $stateParams
+    params = removeEmptyKey $stateParams
+    if params.term
+      $scope.apps = App.query params
+
+    $scope.isLanding = not $stateParams.term
 
 ])
 

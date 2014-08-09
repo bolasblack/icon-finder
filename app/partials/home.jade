@@ -1,8 +1,13 @@
 
-ul.list-unstyled.app-list
-  li.app(data-ng-repeat="app in apps")
-    a.app-link(target="_blank" data-ng-href="{{app.trackViewUrl}}")
-      p.app-icon
-        img(data-ng-src="{{app.artworkUrl600 || app.artworkUrl512}}")
-      p.app-name {{app.trackName}}
+div(data-spin="apps.$promise")
+  ul.list-unstyled.app-list
+    li.app(data-ng-repeat="app in apps")
+      a.app-link(target="_blank" data-ng-href="{{app.trackViewUrl}}")
+        p.app-icon
+          img(data-ng-src="{{app.artworkUrl600 || app.artworkUrl512}}")
+        p.app-name {{app.trackName}}
+    li.message(data-ng-show="isLanding")
+      | 输入应用名称开始搜索吧
+    li.message(data-ng-show="apps.$resolved && !isLanding && !apps.length")
+      | 没有找到任何应用 :(
 
