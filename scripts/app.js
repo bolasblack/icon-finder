@@ -21,7 +21,7 @@
     }
   ]).controller('AppListCtrl', [
     '$scope', '$stateParams', 'App', function($scope, $stateParams, App) {
-      var removeEmptyKey;
+      var params, removeEmptyKey;
       removeEmptyKey = function(obj) {
         var newObj;
         newObj = {};
@@ -32,7 +32,11 @@
         });
         return newObj;
       };
-      return $scope.apps = App.query(removeEmptyKey($stateParams));
+      params = removeEmptyKey($stateParams);
+      if (params.term) {
+        $scope.apps = App.query(params);
+      }
+      return $scope.isLanding = !$stateParams.term;
     }
   ]);
 
@@ -98,7 +102,20 @@
   'use strict';
 
   /* Directives */
-  angular.module('app.directives', []);
+  angular.module('app.directives', []).directive('spin', [
+    '$q', function($q) {
+      return {
+        link: function(scope, $elem, attrs) {
+          var spinner;
+          spinner = new Spinner().spin();
+          return scope.$watch(attrs.spin, function(promise) {
+            $elem.append(spinner.el);
+            return $q.when(promise).then(spinner.stop.bind(spinner));
+          });
+        }
+      };
+    }
+  ]);
 
 }).call(this);
 

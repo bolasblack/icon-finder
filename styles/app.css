@@ -50,3 +50,8 @@
   width: 280px;
   text-align: center;
 }
+
+.app-list .message {
+  padding-top: 50px;
+  color: #aeaeae;
+}
