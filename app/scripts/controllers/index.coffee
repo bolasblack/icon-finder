@@ -14,7 +14,6 @@ angular.module('app.controllers', [
       $scope.searchTerm = term
 
     $scope.search = ->
-      return unless $scope.searchTerm
       $state.go 'home', term: $scope.searchTerm
 
 ])
@@ -33,6 +32,9 @@ angular.module('app.controllers', [
       $scope.apps = App.query params
 
     $scope.isLanding = not $stateParams.term
+
+    $scope.isResultEmpty = ->
+      $scope.apps?.$resolved and not $scope.apps?.length and not $scope.isLanding
 
 ])
 
