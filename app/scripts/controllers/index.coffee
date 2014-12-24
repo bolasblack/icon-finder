@@ -13,8 +13,8 @@ angular.module('app.controllers', [
     $scope.$watch (-> $state.params?.term), (term) ->
       $scope.searchTerm = term
 
-    $scope.search = ->
-      $state.go 'home', term: $scope.searchTerm
+    $scope.$watch 'searchTerm', (searchTerm) ->
+      $state.go 'home', term: searchTerm
 
 ])
 
@@ -37,4 +37,3 @@ angular.module('app.controllers', [
       $scope.apps?.$resolved and not $scope.apps?.length and not $scope.isLanding
 
 ])
-

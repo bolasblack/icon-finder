@@ -18,12 +18,12 @@ test :
 	node_modules/karma/bin/karma start tests/test.unit.conf.coffee --browsers $$KARMA_BROWSERS
 
 npm :
-	@echo "Check cnpm package update..."
-	@hash cnpm || (echo "Install cnpm first" && exit 1)
+	@echo "Check npm package update..."
+	@hash npm || (echo "Install npm first" && exit 1)
 	@CHECK_FILE=package.json STATE_FOLDER=node_modules sh scripts/update_manager.sh check; \
 	if [ $$? -eq 1 ]; then \
-		cnpm install \
-		&& cnpm update \
+		npm install \
+		&& npm update \
 		&& CHECK_FILE=package.json STATE_FOLDER=node_modules sh scripts/update_manager.sh update \
 		; \
 	fi
