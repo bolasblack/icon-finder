@@ -10,11 +10,11 @@
       }), function(term) {
         return $scope.searchTerm = term;
       });
-      return $scope.search = function() {
+      return $scope.$watch('searchTerm', function(searchTerm) {
         return $state.go('home', {
-          term: $scope.searchTerm
+          term: searchTerm
         });
-      };
+      });
     }
   ]).controller('AppListCtrl', [
     '$scope', '$stateParams', 'App', function($scope, $stateParams, App) {
